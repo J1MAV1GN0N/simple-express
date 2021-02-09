@@ -4,6 +4,10 @@ FROM node:13
 # Create app directory
 WORKDIR /usr/src/app
 
+FROM nginx:alpine
+
+COPY nginx.conf /etc/nginx/nginx.conf
+
 # Install app dependencies by copying
 # package.json and package-lock.json
 COPY package*.json ./
